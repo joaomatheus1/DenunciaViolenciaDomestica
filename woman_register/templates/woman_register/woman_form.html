@@ -1,0 +1,39 @@
+{% extends "woman_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method= "post" autocomplete="off">
+    {% csrf_token %}
+    {{form|crispy}}
+<style>
+       .btn-primary{ 
+       background-color: rgb(131,248,255);
+       color: black;
+       }      
+
+       .btn-primary:hover {
+  color: #fff;
+  background-color: black;
+  border-color: black;
+}
+
+</style>
+    <button type="submit" class="btn btn-primary"> Enviar </button>
+</form>
+
+<style>
+    .btn-dark {
+        color: black;
+        background-color: rgb(131,248,255);
+        position: relative;
+        top: -39px;
+        left: 890px;
+        height: 90;
+        width: 90;
+        }
+
+</style>
+<a href="http://127.0.0.1:8000/woman">
+<button type="button" class="btn btn-dark">Voltar</button>
+</a>
+{% endblock content %}

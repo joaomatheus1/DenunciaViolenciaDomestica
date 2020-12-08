@@ -1,0 +1,83 @@
+{% extends "woman_register/base.html" %}
+
+
+{% block content %}
+
+<table class="table table-borderless">
+    <thead class="border-buttom font-weight-bold"> 
+
+        <style>
+            .btn-outline-success
+            {background-color: rgb(131,248,255);
+            color: black;
+            }      
+     </style>
+
+        <tr>
+            <td style="color: black;">Nome Completo</td>
+            <td style="color: black;">Telefone</td>
+            <td style="color: black;">Rua</td>
+            <td style="color: black;">Cidade</td>
+            <td style="color: black;">CPF</td>
+            <td style="color: black;">Ponto de Referência</td>
+            <td>
+                <a href="{% url 'woman_insert' %}" class="btn btn-dark">
+                <i class="fas fa-plus"></i>Add New
+            </a>
+            </td>
+        </tr>
+
+        <style>
+            .btn-dark {
+                position: relative;
+                     }
+
+        </style>
+
+        <tbody>
+         
+            {% for woman in woman_list %}
+                
+                <tr>
+                    <td>{{woman.nome_completo}}</td>
+                    <td>{{woman.numero}}</td>
+                    <td>{{woman.rua}}</td>
+                    <td>{{woman.cidade}}</td>
+                    <td>{{woman.cpf}}</td>
+                    <td>{{woman.wom_code}}</td>
+                    <td>
+                        <a href="{% url 'woman_update' woman.cpf %}" class="btn text-secondary px-0">
+                            <i class="far fa-edit fa-lg"></i>
+                        </a>
+                        <form action="{% url 'woman_delete' woman.cpf %}" method="post" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">
+                                <i class="far fa-trash-alt fa-lg text-danger float-right"></i>    
+                            </button>
+                        </form>
+
+                    </td>
+  
+                </tr>
+
+            {% endfor %}
+            
+        </tbody>
+
+    </thead>
+ 
+</table>
+
+<style>
+    .btn-dark 
+    {background-color: rgb(131,248,255);
+    align-items:flex-end;
+    color: black;
+    }      
+</style>
+
+<a href="http://127.0.0.1:8000/woman">
+    <button type="button" class="btn btn-dark">Voltar</button>
+</a> 
+
+{% endblock content %}
