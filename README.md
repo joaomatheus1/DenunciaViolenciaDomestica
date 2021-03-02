@@ -1,6 +1,7 @@
-![Readme](https://user-images.githubusercontent.com/72817491/100555378-d91e3800-3279-11eb-843c-a1fd1836c897.PNG)
+Projeto CRUD com interface prática e objetivo de realizar denúncias de violencia contra mulher.
 
-Projeto CRUD com interface prática e objetivo de realizar denúncias de violência contra mulher.
+
+![Readme](https://user-images.githubusercontent.com/72817491/100555378-d91e3800-3279-11eb-843c-a1fd1836c897.PNG)
 
 Primeira tela Home onde o usuário irá cadastrar, deletar, modificar ou consultar sua denúncia.
 
